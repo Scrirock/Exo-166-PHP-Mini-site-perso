@@ -28,9 +28,12 @@ function getUserData(){
     $data = json_decode(file_get_contents("../data/user.json"), true, 5, JSON_OBJECT_AS_ARRAY);
     foreach ($data as $key => $value){
         if ($key === "experiences"){
-            foreach ($value as $otherKey => $otherValue){
-                echo $otherKey.": ".$otherValue."<br>";
-            }
+                foreach ($value as $untrucdemerde){
+                    echo $key."<br><br>";
+                    foreach ($untrucdemerde as $key => $value){
+                        echo $key.": ".$value."<br>";
+                    }
+                }
         }
         else echo $key.": ".$value."<br>";
     }
